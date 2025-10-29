@@ -1,0 +1,33 @@
+
+body{
+    background-color: lightcyan ;
+    align-items: center;
+    margin: 100px;
+}
+
+#notas{
+    text-align: center;
+    position: top center;
+}
+
+#painel_notas{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 200px;
+}
+
+#nao_urgentes{
+    background-color: white;
+    border: 10px solid yellow;
+    padding: 10px;
+    width: 300px;
+    height: 450px;
+}
+
+#urgentes{
+    background-color: white;
+    border: 10px solid red;
+    padding: 10px;
+    width: 300px;
+    height: 450px;
+}
