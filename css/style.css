@@ -1,5 +1,4 @@
 
-/* Colors for note rotation */
 .color-0 {
     color: blue;
 }
@@ -12,27 +11,40 @@
     color: purple;
 }
 
-/* Base styles */
 body{
-    background-color: lightcyan ;
+    background-color: silver;
     align-items: center;
     margin: 100px;
+}
+
+#main{
+    background-color: ghostwhite;
+    margin: 120px 250px;
+    padding: 10px ;
+    border: 7px solid slategrey;
 }
 
 #notas{
     text-align: center;
     position: top center;
+    font-size: 22px;
 }
+
+#btn_inserir{
+    background-color: #292929;
+    color: white;
+}
+
 
 #painel_notas{
     display: flex;
     justify-content: space-between;
-    margin: 5% 12%;
+    margin: 50px 200px;
 }
 
 #nao_urgentes{
     background-color: white;
-    border: 10px solid yellow;
+    border: 10px solid gold;
     padding: 10px;
     width: 300px;
     height: 450px;
@@ -40,7 +52,7 @@ body{
 
 #urgentes{
     background-color: white;
-    border: 10px solid red;
+    border: 10px solid firebrick;
     padding: 10px;
     width: 300px;
     height: 450px;
