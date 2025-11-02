@@ -19,7 +19,7 @@ function inserir() {
         div.appendChild(novo)
 
         // Update color counter
-        colorCounter = (colorCont + 1) % 3;
+        colorCont = (colorCont + 1) % 3;
 
     }else if(urgente == true){
         var novo 
@@ -32,7 +32,7 @@ function inserir() {
         div.appendChild(novo)
 
         // Update color counter
-        colorCounter = (colorCont + 1) % 3;
+        colorCont = (colorCont + 1) % 3;
 
 
     }else if (urgente== false || nao_urgente == false) {
