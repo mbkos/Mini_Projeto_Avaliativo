@@ -1,16 +1,4 @@
 
-.color-0 {
-    color: blue;
-}
-
-.color-1 {
-    color: green;
-}
-
-.color-2 {
-    color: purple;
-}
-
 body{
     background-color: silver;
     align-items: center;
@@ -53,7 +41,8 @@ body{
 }
 
 #btn_inserir, #btn_excluirNotaNU, #btn_excluirTodasNU, #btn_excluirNotaU, #btn_excluirTodasU{
-    background-color: #292929;
-    color: white;
+    background-color: #2f3640;
+    color: whitesmoke;
+    font-weight: bold;
     border-radius: 10px solid slategrey;
 }

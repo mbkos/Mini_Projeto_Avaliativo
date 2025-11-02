@@ -1,10 +1,12 @@
 
 let colorCont = 0;
 
+
 function inserir() {
     var nota = document.getElementById("nota_Inserir").value
     var urgente = document.getElementById("check_urgente").checked
     var nao_urgente = document.getElementById("check_nao_urgente").checked
+
 
     if(urgente == true && nao_urgente == true){
         alert("Selecione apenas uma opção: Urgente ou Não Urgente.")
@@ -13,12 +15,15 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
-        novo.classList.add(`color-${colorCont}`)
-        
+        if(colorCont == 0){
+            novo.style.color = "blue"
+        }else if(colorCont == 1){
+            novo.style.color = "green"
+        }else{
+            novo.style.color = "purple"
+        }
         var div = document.getElementById("nao_urgentes")
         div.appendChild(novo)
-
-        // Update color counter
         colorCont = (colorCont + 1) % 3;
 
     }else if(urgente == true){
@@ -26,19 +31,23 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
-        novo.classList.add(`color-${colorCont}`)
-
+        if(colorCont == 0){
+            novo.style.color = "blue"
+        }else if(colorCont == 1){
+            novo.style.color = "green"
+        }else{
+            novo.style.color = "purple"
+        }
         var div = document.getElementById("urgentes")
         div.appendChild(novo)
-
-        // Update color counter
         colorCont = (colorCont + 1) % 3;
-
 
     }else if (urgente== false || nao_urgente == false) {
         alert("Selecione uma opção: Urgente ou Não Urgente.")
     }
+    
 }
+
 
 function excluir_nota_NU(){
     var p = document.getElementById("nota_nao_urgente")
@@ -49,6 +58,7 @@ function excluir_nota_NU(){
     }
 }
 
+
 function excluir_nota_U(){
     var p = document.getElementById("nota_urgente")
     if(p){
@@ -57,6 +67,7 @@ function excluir_nota_U(){
         alert("Não há texto para remover!")
     }
 }
+
 
 function excluir_todas_NU(){
     var div = document.querySelectorAll("#nota_nao_urgente")
@@ -68,6 +79,7 @@ function excluir_todas_NU(){
         })
     }
 }
+
 
 function excluir_todas_U(){
     var div = document.querySelectorAll("#nota_urgente")
