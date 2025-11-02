@@ -1,4 +1,18 @@
 
+/* Colors for note rotation */
+.color-0 {
+    color: blue;
+}
+
+.color-1 {
+    color: green;
+}
+
+.color-2 {
+    color: purple;
+}
+
+/* Base styles */
 body{
     background-color: lightcyan ;
     align-items: center;
@@ -13,7 +27,7 @@ body{
 #painel_notas{
     display: flex;
     justify-content: space-between;
-    margin: 50px 200px;
+    margin: 5% 12%;
 }
 
 #nao_urgentes{

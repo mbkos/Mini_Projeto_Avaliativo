@@ -1,4 +1,6 @@
 
+let colorCont = 0;
+
 function inserir() {
     var nota = document.getElementById("nota_Inserir").value
     var urgente = document.getElementById("check_urgente").checked
@@ -11,19 +13,26 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
+        novo.classList.add(`color-${colorCont}`)
         
         var div = document.getElementById("nao_urgentes")
         div.appendChild(novo)
 
+        // Update color counter
+        colorCounter = (colorCont + 1) % 3;
 
     }else if(urgente == true){
         var novo 
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
+        novo.classList.add(`color-${colorCont}`)
 
         var div = document.getElementById("urgentes")
         div.appendChild(novo)
+
+        // Update color counter
+        colorCounter = (colorCont + 1) % 3;
 
 
     }else if (urgente== false || nao_urgente == false) {
