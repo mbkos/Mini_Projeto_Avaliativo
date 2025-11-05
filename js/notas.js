@@ -25,7 +25,7 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
-        novo.colorir()
+
 
         var div = document.getElementById("nao_urgentes")
         div.appendChild(novo)
@@ -36,7 +36,6 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
-        novo.colorir()
 
         var div = document.getElementById("urgentes")
         div.appendChild(novo)
