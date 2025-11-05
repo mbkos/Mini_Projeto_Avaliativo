@@ -1,6 +1,15 @@
 
 let colorCont = 0;
 
+function colorir(){
+    if(colorCont == 0){
+            novo.style.color = "blue"
+        }else if(colorCont == 1){
+            novo.style.color = "green"
+        }else{
+            novo.style.color = "purple"
+        }
+}
 
 function inserir() {
     var nota = document.getElementById("nota_Inserir").value
@@ -10,18 +19,14 @@ function inserir() {
 
     if(urgente == true && nao_urgente == true){
         alert("Selecione apenas uma opção: Urgente ou Não Urgente.")
+        
     }else if(nao_urgente == true) {
         var novo
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
-        if(colorCont == 0){
-            novo.style.color = "blue"
-        }else if(colorCont == 1){
-            novo.style.color = "green"
-        }else{
-            novo.style.color = "purple"
-        }
+        novo.colorir()
+
         var div = document.getElementById("nao_urgentes")
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
@@ -31,13 +36,8 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
-        if(colorCont == 0){
-            novo.style.color = "blue"
-        }else if(colorCont == 1){
-            novo.style.color = "green"
-        }else{
-            novo.style.color = "purple"
-        }
+        novo.colorir()
+
         var div = document.getElementById("urgentes")
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
@@ -76,7 +76,11 @@ function excluir_todas_NU(){
     }else{
         div.forEach(function(n){
             n.remove()
-        })
+        })/**forEach: não pode ser usado em elementos vazios; percorre os elementos
+            * function(): é a função de retorno para que percorra os elementos 
+            * n: é o nome do parâmetro que representa o elemento atual
+            *
+            */
     }
 }
 
@@ -87,7 +91,7 @@ function excluir_todas_U(){
         alert("Não há notas para remover!")
     }else{
         div.forEach(function(n){
-            n.remove()
-        })
+                        n.remove()
+                    })
     }
 }
