@@ -1,7 +1,7 @@
 
 let colorCont = 0;
 
-function colorir(){
+function colorir(novo){
     if(colorCont == 0){
             novo.style.color = "blue"
         }else if(colorCont == 1){
@@ -25,7 +25,7 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
-
+        colorir(novo)
 
         var div = document.getElementById("nao_urgentes")
         div.appendChild(novo)
@@ -36,6 +36,7 @@ function inserir() {
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
+        colorir(novo)
 
         var div = document.getElementById("urgentes")
         div.appendChild(novo)
@@ -76,7 +77,7 @@ function excluir_todas_NU(){
         div.forEach(function(n){
             n.remove()
         })/**forEach: não pode ser usado em elementos vazios; percorre os elementos
-            * function(): é a função de retorno para que percorra os elementos 
+            * function(): é a função de retorno para que percorra os elementos; FUNÇÃO ANÔNIMA
             * n: é o nome do parâmetro que representa o elemento atual
             *
             */
