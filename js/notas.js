@@ -10,11 +10,12 @@ if(urgente  && nao_urgente ){
                 urgente.checked = false
             }
         })
-        urgente.addEventListener('mudar', function()[
+        urgente.addEventListener('mudar', function(){
             if(this.checked){
                 nao_urgente.checked = false
             }
-        ])
+        })
+    }
 
 function colorir(novo){
     if(colorCont == 0){
