@@ -1,5 +1,20 @@
 
 let colorCont = 0;
+var nota = document.getElementById("nota_Inserir").value
+var urgente = document.getElementById("check_urgente").checked
+var nao_urgente = document.getElementById("check_nao_urgente").checked
+
+if(urgente == true && nao_urgente == true){
+        nao_urgente.addEventListener('mudar', function(){
+            if(this.checked){
+                urgente.checked = false
+            }
+        })
+        urgente.addEventListener('mudar', function()[
+            if(this.checked){
+                nao_urgente.checked = false
+            }
+        ])
 
 function colorir(novo){
     if(colorCont == 0){
@@ -12,22 +27,8 @@ function colorir(novo){
 }
 
 function inserir() {
-    var nota = document.getElementById("nota_Inserir").value
-    var urgente = document.getElementById("check_urgente").checked
-    var nao_urgente = document.getElementById("check_nao_urgente").checked
-
-
-    if(urgente == true && nao_urgente == true){
-        nao_urgente.addEventListener('mudar', function(){
-            if(this.checked){
-                urgente.checked = false
-            }
-        })
-        urgente.addEventListener('mudar', function()[
-            if(this.checked){
-                nao_urgente.checked = false
-            }
-        ])
+    
+    
         
     }else if(nao_urgente == true) {
         var novo
