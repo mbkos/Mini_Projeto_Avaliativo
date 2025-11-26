@@ -18,11 +18,19 @@ function inserir() {
 
 
     if(urgente == true && nao_urgente == true){
-        alert("Selecione apenas uma opção: Urgente ou Não Urgente.")
+        nao_urgente.addEventListener('mudar', function(){
+            if(this.checked){
+                urgente.checked = false
+            }
+        })
+        urgente.addEventListener('mudar', function()[
+            if(this.checked){
+                nao_urgente.checked = false
+            }
+        ])
         
     }else if(nao_urgente == true) {
         var novo
-        urgente == false
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
@@ -34,7 +42,6 @@ function inserir() {
 
     }else if(urgente == true){
         var novo 
-        nao_urgente == false
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
