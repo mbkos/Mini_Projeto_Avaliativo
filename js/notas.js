@@ -4,7 +4,7 @@ var nota = document.getElementById("nota_Inserir").value
 var urgente = document.getElementById("check_urgente").checked
 var nao_urgente = document.getElementById("check_nao_urgente").checked
 
-if(urgente  && nao_urgente ){
+if(urgente && nao_urgente){
         nao_urgente.addEventListener('mudar', function(){
             if(this.checked){
                 urgente.checked = false
@@ -29,9 +29,7 @@ function colorir(novo){
 
 function inserir() {
     
-    
-        
-    }else if(nao_urgente == true) {
+    if(nao_urgente == true) {
         var novo
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
