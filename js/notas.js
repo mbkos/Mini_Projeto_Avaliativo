@@ -22,6 +22,7 @@ function inserir() {
         
     }else if(nao_urgente == true) {
         var novo
+        urgente == false
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
@@ -33,6 +34,7 @@ function inserir() {
 
     }else if(urgente == true){
         var novo 
+        nao_urgente == false
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
