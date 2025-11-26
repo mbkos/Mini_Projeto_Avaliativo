@@ -4,7 +4,7 @@ var nota = document.getElementById("nota_Inserir").value
 var urgente = document.getElementById("check_urgente").checked
 var nao_urgente = document.getElementById("check_nao_urgente").checked
 
-if(urgente == true && nao_urgente == true){
+if(urgente  && nao_urgente ){
         nao_urgente.addEventListener('mudar', function(){
             if(this.checked){
                 urgente.checked = false
