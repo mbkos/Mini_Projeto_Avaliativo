@@ -17,11 +17,7 @@ function inserir() {
     var nao_urgente = document.getElementById("check_nao_urgente").checked
 
     if (nao_urgente == true) {
-        urgente.addEventListener('mudar', function () {
-            if (this.checked) {
-                urgente.checked = false;
-            }
-        })
+        urgente.checked = false
         var novo
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
@@ -33,11 +29,7 @@ function inserir() {
         colorCont = (colorCont + 1) % 3;
 
     } else if (urgente == true) {
-        nao_urgente.addEventListener('mudar', function () {
-            if (this.checked) {
-                nao_urgente.checked = false;
-            }
-        })
+        nao_urgente.checked = false;
         var novo
         novo = document.createElement("p")
         novo.id = "nota_urgente"
