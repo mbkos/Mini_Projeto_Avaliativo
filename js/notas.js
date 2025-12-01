@@ -1,31 +1,14 @@
 
 let colorCont = 0;
 
-document.addEventListener('DOMContentLoaded', function(){
-    const checkU = document.getElementById("check_urgente");
-    const checkNU = document.getElementById("check_nao_urgente");
-    if(checkU && checkNU){
-        checkU.addEventListener('mudar', function(){
-            if(this.checked){
-                checkNU.checked = false;
-            }
-        })
-        checkNU.addEventListener('mudar', function(){
-            if(this.checked){
-                checkU.checked = false;
-            }
-        })
+function colorir(novo) {
+    if (colorCont == 0) {
+        novo.style.color = "blue"
+    } else if (colorCont == 1) {
+        novo.style.color = "green"
+    } else {
+        novo.style.color = "purple"
     }
-})
-
-function colorir(novo){
-    if(colorCont == 0){
-            novo.style.color = "blue"
-        }else if(colorCont == 1){
-            novo.style.color = "green"
-        }else{
-            novo.style.color = "purple"
-        }
 }
 
 function inserir() {
@@ -33,7 +16,12 @@ function inserir() {
     var urgente = document.getElementById("check_urgente").checked
     var nao_urgente = document.getElementById("check_nao_urgente").checked
 
-    if(nao_urgente == true) {
+    if (nao_urgente == true) {
+        urgente.addEventListener('mudar', function () {
+            if (this.checked) {
+                urgente.checked = false;
+            }
+        })
         var novo
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
@@ -44,8 +32,13 @@ function inserir() {
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
 
-    }else if(urgente == true){
-        var novo 
+    } else if (urgente == true) {
+        nao_urgente.addEventListener('mudar', function () {
+            if (this.checked) {
+                nao_urgente.checked = false;
+            }
+        })
+        var novo
         novo = document.createElement("p")
         novo.id = "nota_urgente"
         novo.innerHTML = `${nota}`
@@ -55,39 +48,39 @@ function inserir() {
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
 
-    }else if (urgente== false || nao_urgente == false) {
+    } else if (urgente == false || nao_urgente == false) {
         alert("Selecione uma opção: Urgente ou Não Urgente.")
     }
-    
+
 }
 
 
-function excluir_nota_NU(){
+function excluir_nota_NU() {
     var p = document.getElementById("nota_nao_urgente")
-    if(p){
+    if (p) {
         p.remove()
-    }else{
+    } else {
         alert("Não há texto para remover!")
     }
 }
 
 
-function excluir_nota_U(){
+function excluir_nota_U() {
     var p = document.getElementById("nota_urgente")
-    if(p){
+    if (p) {
         p.remove()
-    }else{
+    } else {
         alert("Não há texto para remover!")
     }
 }
 
 
-function excluir_todas_NU(){
+function excluir_todas_NU() {
     var div = document.querySelectorAll("#nota_nao_urgente")
-    if(div.length == 0){
+    if (div.length == 0) {
         alert("Não há notas para remover!")
-    }else{
-        div.forEach(function(n){
+    } else {
+        div.forEach(function (n) {
             n.remove()
         })/**forEach: não pode ser usado em elementos vazios; percorre os elementos
             * function(): é a função de retorno para que percorra os elementos; FUNÇÃO ANÔNIMA
@@ -98,13 +91,13 @@ function excluir_todas_NU(){
 }
 
 
-function excluir_todas_U(){
+function excluir_todas_U() {
     var div = document.querySelectorAll("#nota_urgente")
-    if(div.length == 0){
+    if (div.length == 0) {
         alert("Não há notas para remover!")
-    }else{
-        div.forEach(function(n){
-                        n.remove()
-                    })
+    } else {
+        div.forEach(function (n) {
+            n.remove()
+        })
     }
 }
