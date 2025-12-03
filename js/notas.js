@@ -16,17 +16,9 @@ function selecionar(){
     var nao_urgente = document.getElementById("check_nao_urgente").checked
 
     if(urgente == true){
-        nao_urgente.addEventListener('mudar', function(){
-        if(this.checked){
-            urgente.checked = false
-        }
-    })
+        nao_urgente.checked = false
     }else if(nao_urgente == true){
-        urgente.addEventListener('mudar', function(){
-        if(this.checked){
-            nao_urgente.checked = false
-        }
-    })
+        urgente.checked = false
 }
 }
 
