@@ -12,7 +12,7 @@ function colorir(novo){
 }
 
 function inserir() {
-    var nota = document.getElementById("nota_Inserir").value
+    var nota = document.getElementById("nota_Inserir").value.trim()
     var urgente = document.getElementById("check_urgente").checked
     var nao_urgente = document.getElementById("check_nao_urgente").checked
 
@@ -42,7 +42,7 @@ function inserir() {
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
 
-    }else if (urgente== false || nao_urgente == false) {
+    }else if (urgente== false && nao_urgente == false) {
         alert("Selecione uma opção: Urgente ou Não Urgente.")
     }
     
