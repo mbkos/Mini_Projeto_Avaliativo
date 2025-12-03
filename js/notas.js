@@ -1,4 +1,3 @@
-
 let colorCont = 0;
 
 function colorir(novo){
@@ -11,22 +10,23 @@ function colorir(novo){
         }
 }
 
+
 function inserir() {
-    var nota = document.getElementById("nota_Inserir").value.trim()
+    var nota = document.getElementById("nota_Inserir").value
     var urgente = document.getElementById("check_urgente").checked
     var nao_urgente = document.getElementById("check_nao_urgente").checked
 
-        
     if(urgente == true && nao_urgente == true){
         alert("Selecione apenas uma opção: Urgente ou Não Urgente.")
-        
+
+
     }else if(nao_urgente == true) {
         var novo
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
         novo.innerHTML = `${nota}`
         colorir(novo)
-
+        
         var div = document.getElementById("nao_urgentes")
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
@@ -42,12 +42,11 @@ function inserir() {
         div.appendChild(novo)
         colorCont = (colorCont + 1) % 3;
 
-    }else if (urgente== false && nao_urgente == false) {
+
+    }else if (urgente== false || nao_urgente == false) {
         alert("Selecione uma opção: Urgente ou Não Urgente.")
     }
-    
 }
-
 
 function excluir_nota_NU(){
     var p = document.getElementById("nota_nao_urgente")
@@ -58,7 +57,6 @@ function excluir_nota_NU(){
     }
 }
 
-
 function excluir_nota_U(){
     var p = document.getElementById("nota_urgente")
     if(p){
@@ -68,7 +66,6 @@ function excluir_nota_U(){
     }
 }
 
-
 function excluir_todas_NU(){
     var div = document.querySelectorAll("#nota_nao_urgente")
     if(div.length == 0){
@@ -76,14 +73,9 @@ function excluir_todas_NU(){
     }else{
         div.forEach(function(n){
             n.remove()
-        })/**forEach: não pode ser usado em elementos vazios; percorre os elementos
-            * function(): é a função de retorno para que percorra os elementos; FUNÇÃO ANÔNIMA
-            * n: é o nome do parâmetro que representa o elemento atual
-            *
-            */
+        })
     }
 }
-
 
 function excluir_todas_U(){
     var div = document.querySelectorAll("#nota_urgente")
@@ -91,7 +83,10 @@ function excluir_todas_U(){
         alert("Não há notas para remover!")
     }else{
         div.forEach(function(n){
-                        n.remove()
-                    })
+            n.remove()
+        })
     }
 }
+// forEach: não pode ser usado em elementos vazios; percorre os elementos
+//  function(): é a função de retorno para que percorra os elementos; FUNÇÃO ANÔNIMA
+//  n: é o nome do parâmetro que representa o elemento atual
