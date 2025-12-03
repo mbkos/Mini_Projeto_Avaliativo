@@ -17,7 +17,10 @@ function inserir() {
     var nao_urgente = document.getElementById("check_nao_urgente").checked
 
         
-    if(nao_urgente == true) {
+    if(urgente == true && nao_urgente == true){
+        alert("Selecione apenas uma opção: Urgente ou Não Urgente.")
+        
+    }else if(nao_urgente == true) {
         var novo
         novo = document.createElement("p")
         novo.id = "nota_nao_urgente"
