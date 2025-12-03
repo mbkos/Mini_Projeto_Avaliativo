@@ -10,6 +10,7 @@
 <body>
 
     <div id="main">
+
         <div id="notas">
         <p>
             <label for="nota_Inserir">Digite: </label>
@@ -17,30 +18,29 @@
             <input type="button" id="btn_inserir" value="INSERIR NOTA" onclick="inserir()">
             <br><br>
 
-            <input type="checkbox" value="check_urgente">
+            <input type="checkbox" id="check_urgente">
             <label for="nota_urgente">Urgente</label>
 
-            <input type="checkbox" value="check_nao_urgente">
+            <input type="checkbox" id="check_nao_urgente">
             <label for="nota_nao_urgente">Não Urgente</label>
 
         </p>
-    </div>
+        </div>
         <div id="painel_notas">
             <div id="nao_urgentes">
                 <h3>Não Urgentes</h3>
-                <input type="button" id="btn_excluirNotaNU" value="EXCLUIR NOTA" onclick="excluir_nota_NU()">
-                <input type="button" id="btn_excluirTodasNU" value="EXCLUIR TODAS" onclick="excluir_todas_NU()">
+                <input type="button" value="EXCLUIR NOTA" onclick="excluir_nota_NU()">
+                <input type="button" value="EXCLUIR TODAS" onclick="excluir_todas_NU()">
 
             </div>
             <div id="urgentes">
                 <h3>Urgentes</h3>
-                <input type="button" id="btn_excluirNotaU" value="EXCLUIR NOTA" onclick="excluir_nota_U()">
-                <input type="button" id="btn_excluirTodasU" value="EXCLUIR TODAS" onclick="excluir_todas_U()">
+                <input type="button" value="EXCLUIR NOTA" onclick="excluir_nota_U()">
+                <input type="button" value="EXCLUIR TODAS" onclick="excluir_todas_U()">
 
             </div>
         </div>
+        
     </div>
 </body>
-
 </html>
-
