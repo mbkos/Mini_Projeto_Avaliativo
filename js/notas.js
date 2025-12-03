@@ -11,20 +11,23 @@ function colorir(novo){
         }
 }
 
-if(urgente = document.getElementById("check_urgente").checked){
-    var nao_urgente = document.getElementById("check_nao_urgente")
-    nao_urgente.addEventListener('mudar', function(){
+function selecionar(){
+    var urgente = document.getElementById("check_urgente").checked
+    var nao_urgente = document.getElementById("check_nao_urgente").checked
+
+    if(urgente == true){
+        nao_urgente.addEventListener('mudar', function(){
         if(this.checked){
             urgente.checked = false
         }
     })
-}else if(nao_urgente = document.getElementById("check_nao_urgente").checked){
-    var urgente = document.getElementById("check_urgente")
-    urgente.addEventListener('mudar', function(){
+    }else if(nao_urgente == true){
+        urgente.addEventListener('mudar', function(){
         if(this.checked){
             nao_urgente.checked = false
         }
     })
+}
 }
 
 function inserir() {
