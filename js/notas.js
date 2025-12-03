@@ -1,22 +1,6 @@
 
 let colorCont = 0;
 
-document.addEventListener('DOMContentLoaded', function(){
-    const checkU = document.getElementById("check_urgente");
-    const checkNU = document.getElementById("check_nao_urgente");
-    if(checkU && checkNU){
-        checkU.addEventListener('mudar', function(){
-            if(this.checked){
-                checkNU.checked = false;
-            }
-        })
-        checkNU.addEventListener('mudar', function(){
-            if(this.checked){
-                checkU.checked = false;
-            }
-        })
-    }
-})
 
 function colorir(novo){
     if(colorCont == 0){
