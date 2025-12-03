@@ -45,16 +45,6 @@ function inserir() {
     
 }
 
-function selecionar(){
-    var urgente = document.getElementById("check_urgente").checked
-    var nao_urgente = document.getElementById("check_nao_urgente").checked
-
-    if(urgente == true){
-        nao_urgente.checked = false
-    }else if(nao_urgente == true){
-        urgente.checked = false
-    }
-}
 
 function excluir_nota_NU(){
     var p = document.getElementById("nota_nao_urgente")
